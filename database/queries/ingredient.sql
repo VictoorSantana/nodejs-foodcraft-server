@@ -1,0 +1,1 @@
+CREATE TABLE tb_ingredients (id INT NOT NULL AUTO_INCREMENT,id_recipe INT(4) NOT NULL,id_item INT(4) NOT NULL,id_unit INT(4) NOT NULL,amount INT(2) NOT NULL,PRIMARY KEY (id));
