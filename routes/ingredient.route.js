@@ -1,10 +1,10 @@
 module.exports = function (app) {
-	var controller = require('../controllers/api/ingredient.controller');
-	app.get('/api/ingredient/', controller.findAll);
-	app.get('/api/ingredient/:id', controller.findOne);
-	app.post('/api/ingredient/', controller.create);
-	app.put('/api/ingredient/:id', controller.update);
-	app.delete('/api/ingredient/:id', controller.delete);
+let { verify } = require('../routes/middleware/authentication');	var controller = require('../controllers/api/ingredient.controller');
+	app.get('/api/ingredient/', verify('roll ingredient'), controller.findAll);
+	app.get('/api/ingredient/:id', verify('one ingredient'), controller.findOne);
+	app.post('/api/ingredient/', verify('add ingredient'), controller.create);
+	app.put('/api/ingredient/:id', verify('update ingredient'), controller.update);
+	app.delete('/api/ingredient/:id', verify('delete ingredient'), controller.delete);
 
 
 /*custom*/

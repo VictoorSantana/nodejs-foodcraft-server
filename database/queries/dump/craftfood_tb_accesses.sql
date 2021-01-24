@@ -16,30 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tb_ingredients`
+-- Table structure for table `tb_accesses`
 --
 
-DROP TABLE IF EXISTS `tb_ingredients`;
+DROP TABLE IF EXISTS `tb_accesses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tb_ingredients` (
+CREATE TABLE `tb_accesses` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `id_recipe` int NOT NULL,
-  `id_item` int NOT NULL,
-  `id_unit` int NOT NULL,
-  `amount` int NOT NULL,
+  `id_user` int NOT NULL,
+  `endpoint` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tb_ingredients`
+-- Dumping data for table `tb_accesses`
 --
 
-LOCK TABLES `tb_ingredients` WRITE;
-/*!40000 ALTER TABLE `tb_ingredients` DISABLE KEYS */;
-INSERT INTO `tb_ingredients` VALUES (25,1,4,3,4),(26,1,2,3,2),(27,1,7,2,3),(31,3,9,1,2),(32,3,10,3,4),(33,3,17,1,1),(34,3,11,1,1),(35,3,12,1,2),(36,3,13,1,1),(37,2,15,7,2),(38,1,15,4,2);
-/*!40000 ALTER TABLE `tb_ingredients` ENABLE KEYS */;
+LOCK TABLES `tb_accesses` WRITE;
+/*!40000 ALTER TABLE `tb_accesses` DISABLE KEYS */;
+INSERT INTO `tb_accesses` VALUES (1,1,'/api/user/'),(2,1,'roll recipe');
+/*!40000 ALTER TABLE `tb_accesses` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-24 19:41:43
+-- Dump completed on 2021-01-24 19:41:42

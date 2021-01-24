@@ -24,6 +24,8 @@ require('./routes/ingredient.route')(app);
 require('./routes/item.route')(app);
 require('./routes/recipe.route')(app);
 require('./routes/unit.route')(app);
+require('./routes/user.route')(app);
+require('./routes/access.route')(app);
 
 app.listen(process.env.SERVER_PORT ? process.env.SERVER_PORT : 5000, () => {
     console.log(`Server is running on port ${process.env.SERVER_PORT ? process.env.SERVER_PORT : 5000}...`);

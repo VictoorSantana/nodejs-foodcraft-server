@@ -17,7 +17,7 @@ exports.findOne = function (req, res) {
 		.findAll({
 			where: { id }
 		})
-		.then(result => {
+	.then(result => {
 			res.status(200).json(result);
 		})
 		.catch(e => {
@@ -30,11 +30,11 @@ exports.create = function (req, res) {
 		IngredientModel
 			.create(value)
 			.then(result => {
-				res.status(200).json(result);
+			res.status(200).json(result);
 			})
 			.catch(e => {
 				res.status(500).json(e);
-			});
+		});
 	} else {
 		res.status(500).json(error);
 	}
@@ -44,15 +44,15 @@ exports.update = function (req, res) {
 	const { error, value } = IngredientSchema.validate(req.body);
 	if (error === undefined) {
 		IngredientModel
-			.update(value, {
-				where: { id }
-			})
-			.then(result => {
-				res.status(200).json(result);
-			})
-			.catch(e => {
-				res.status(500).json(e.original.sqlMessage || e.original || e);
-			});
+		.update(value, {
+			where: { id }
+		})
+		.then(result => {
+			res.status(200).json(result);
+		})
+		.catch(e => {
+			res.status(500).json(e.original.sqlMessage || e.original || e);
+		});
 	} else {
 		res.status(500).json(error);
 	}
